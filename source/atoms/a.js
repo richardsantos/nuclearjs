@@ -2,17 +2,19 @@
 *   <a> element - Test Case
 **/
 
-casper.test.begin("Anchor element", 1, function(test){
+casper.test.begin("Anchor element", 3, function(test){
 
-    casper.start(url, function() {
+    casper.start(nuclear.options.url, function() {
         test.assertDoesntExist("a[href='']", "Empty links");
-    });
+        test.assertDoesntExist("a[href*='callto']", "Skype Deprecated Function");
+        test.assertDoesntExist("a[href*='javascript']", "Behavior forbidden here");
+    })
 
-    casper.then(function(){
-    	
-    });
+    .then(function(){
+        // your tests here
+    })
 
-    casper.run(function(){
+    .run(function(){
         test.done();
     });
 

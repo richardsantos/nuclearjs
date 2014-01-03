@@ -1,0 +1,1 @@
+casper.echo("Hello from my.js", "INFO");

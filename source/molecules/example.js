@@ -1,18 +1,19 @@
 /**
-*   Search Form - Test Case
+*   Example - Test Case
 **/
 
 var molecule = {
-    name     : "SearchForm",
-    selector : "form"
+    name     : "Example",
+    selector : "body > div"
 };
 
 casper.test.begin(molecule.name, 3, function(test){
 
     casper.start(nuclear.options.url, function() {
         if(this.exists(molecule.selector)){
-            test.assertExists(molecule.selector + " input[type='text']", "Search Input");
-            test.assertExists(molecule.selector + " button[type='submit']", "Search button");
+            test.assertExists(molecule.selector + " h1", "Example Heading");
+            test.assertExists(molecule.selector + " p", "Example text");
+            test.assertExists(molecule.selector + " a[href='http://www.iana.org/domains/example']", "Example Link");
         }else{
             this.echo(molecule.selector + " not found!", "INFO");
         }
