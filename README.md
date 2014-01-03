@@ -32,15 +32,21 @@ Example of folder structure:
 Dependencies
 ------------
 
+* [NodeJS](http://nodejs.org/)
 * [CasperJS](http://casperjs.org) based in [PhantomJS](http://phantomjs.org)
 
 Install (Very advanced level)
 -----------------------------
-If CasperJS is installed, so clone the repo:
-
-1. Clone: `$ git clone git@github.com:richardsantos/nuclearjs.git`
-2. Edit paths in: tests/init.js
-3. 
+If CasperJS is installed, so clone the repo
+    
+    $ git clone git@github.com:richardsantos/nuclearjs.git
+    
+    // edit your paths in: tests/init.js
+    var nuclear = nuclear || {
+       "root"   : "/var/www/nuclearjs/",
+       "source" : "/var/www/nuclearjs/source/",
+       "test"   : "/var/www/nuclearjs/tests/"
+    };
 
 Options
 -------
