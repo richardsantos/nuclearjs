@@ -1,4 +1,65 @@
-nuclearjs
-=========
+NuclearJS - Boilerplate for CasperJS
+===============================================
 
-Test cases for UI
+NuclearJS is a boilerplate to start your test cases with CasperJS.
+
+Concept and Organization
+------------------------
+
+Based in [Atomic Design Concept](http://bradfrostweb.com/blog/post/atomic-web-design/) for organization:
+* Atoms
+* Molecules
+* Organisms
+* Templates
+* Pages
+
+Example of folder structure:
+
+    source/
+        atoms/
+            a.js (case test for links)
+        molecules/
+            search.js (case test for search form)
+        organisms/
+            header.js (case test for header element)
+        templates/ (probably will be deleted)
+        pages/
+            index.js (case test for index.html)
+    tests/
+        init.js (case test initializer)
+        checkout.js (case test for checkout process)
+
+Dependencies
+------------
+
+* [CasperJS](http://casperjs.org) based in [PhantomJS](http://phantomjs.org)
+
+Install (Very advanced level)
+-----------------------------
+If CasperJS is installed, so clone the repo:
+
+1. Clone: `$ git clone git@github.com:richardsantos/nuclearjs.git`
+2. Edit paths in: tests/init.js
+3. 
+
+Options
+-------
+* --ignore
+* --page
+* --screenshot (default: false)
+* --url (default: http://www.example.com)
+
+Usage
+-----
+
+    $ casperjs test tests/init.js
+    $ casperjs test tests/init.js --url=http://www.example.com --screenshot=true
+    $ casperjs test tests/init.js --url=http://www.example.com --ignore=atoms
+    
+Contribution
+-------------
+Please, submit a issue and send me a pull request. You'll make me happy =)
+
+Thanks
+------
+Thank you [Brad Frost](https://github.com/bradfrost) by inspiration!
