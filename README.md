@@ -64,7 +64,7 @@ Usage
     
 Contribution
 -------------
-Please, submit a issue and send me a pull request. You'll make me happy =)
+Please, submit an issue and send me a pull request. You'll make me happy =)
 
 Thanks
 ------
