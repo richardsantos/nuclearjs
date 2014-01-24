@@ -20,7 +20,8 @@ nuclear.options = {
     "ignore"     : casper.cli.get("ignore") || "",
     "page"       : casper.cli.get("page") || null,
     "screenshot" : casper.cli.get("screenshot") || false,
-    "url"        : casper.cli.get("url") || "http://www.example.com"
+    "url"        : casper.cli.get("url") || "http://www.example.com",
+    "testcase"   : casper.cli.get("testcase")
 };
 
 // your init file
@@ -46,5 +47,9 @@ if( !(nuclear.options.ignore.indexOf("organisms") >= 0) ){
 }
 
 if( nuclear.options.page ){
-    require(nuclear.path.pages + page + ".js");
+    require(nuclear.path.pages + nuclear.options.page + ".js");
+}
+
+if( nuclear.options.testcase ){
+    require(nuclear.test + nuclear.options.testcase + ".js");
 }

@@ -1,7 +1,8 @@
 NuclearJS - Boilerplate for CasperJS
 ===============================================
 
-NuclearJS is a boilerplate to start your test cases with CasperJS.
+NuclearJS is a boilerplate to start your test cases with CasperJS for every project.
+You don't need always code the same things! 
 
 Concept and Organization
 ------------------------
@@ -10,7 +11,6 @@ Based in [Atomic Design Concept](http://bradfrostweb.com/blog/post/atomic-web-de
 * Atoms
 * Molecules
 * Organisms
-* Templates
 * Pages
 
 Example of folder structure:
@@ -22,12 +22,12 @@ Example of folder structure:
             search.js (case test for search form)
         organisms/
             header.js (case test for header element)
-        templates/ (probably will be deleted)
         pages/
             index.js (case test for index.html)
     tests/
-        init.js (case test initializer)
         checkout.js (case test for checkout process)
+    init.js (case test initializer)
+    nuclear.json (your paths)
 
 Dependencies
 ------------
@@ -35,22 +35,22 @@ Dependencies
 * [NodeJS](http://nodejs.org/)
 * [CasperJS](http://casperjs.org) based in [PhantomJS](http://phantomjs.org)
 
-Install (Very advanced level)
+Install
 -----------------------------
 If CasperJS is installed, so clone the repo
     
     $ git clone git@github.com:richardsantos/nuclearjs.git
     
-    // edit your paths in: tests/init.js
-    var nuclear = nuclear || {
+    // edit yours paths in the nuclear.json file:
+    {
        "root"   : "/var/www/nuclearjs/",
        "source" : "/var/www/nuclearjs/source/",
        "test"   : "/var/www/nuclearjs/tests/"
-    };
+    }
 
 Options
 -------
-* --ignore
+* --ignore (you can ignore atoms, molecules or organisms)
 * --page
 * --screenshot (default: false)
 * --url (default: http://www.example.com)
@@ -58,13 +58,14 @@ Options
 Usage
 -----
 
-    $ casperjs test tests/init.js
-    $ casperjs test tests/init.js --url=http://www.example.com --screenshot=true
-    $ casperjs test tests/init.js --url=http://www.example.com --ignore=atoms
+    $ casperjs test ./init.js
+    $ casperjs test ./init.js --url=http://www.example.com --screenshot=true
+    $ casperjs test ./init.js --url=http://www.example.com --ignore=atoms
+    $ casperjs test ./init.js --url=http://www.example.com --page=index
     
 Contribution
 -------------
-Please, submit an issue and send me a pull request. You'll make me happy =)
+Please, submit an issue and send me a pull request.
 
 Thanks
 ------

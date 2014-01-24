@@ -1,0 +1,1 @@
+casper.echo("Test Case for index page", "INFO");
