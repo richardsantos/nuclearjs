@@ -7,6 +7,7 @@ casper.test.begin("Image element", 0, function(test){
     casper.start(nuclear.options.url, function() {
         test.assertDoesntExist("img[src='']", "Empty Image");
         test.assertDoesntExist("img:not([alt])", "Alternative Text");
+        test.assertDoesntExist("img[alt='']", "Empty Alternative Text");
     })
 
     .then(function(){
