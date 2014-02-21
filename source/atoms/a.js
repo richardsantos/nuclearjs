@@ -10,6 +10,7 @@ casper.test.begin("Anchor element", 0, function(test){
         test.assertDoesntExist("a[href*='javascript']", "Behavior forbidden here");
         var host = this.getCurrentUrl().split('/')[2];
         test.assertDoesntExist("a[href^='http']:not([href*='" + host + "']):not([target='_blank'])", "External Links");
+        test.assertDoesntExist("a[title='']", "Empty Title attribute");
     })
 
     .then(function(){
