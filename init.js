@@ -6,7 +6,7 @@
 
 // var casper  = require('casper').create();
 
-var nuclear = require("nuclear.json")
+var nuclear = require("nuclear.json");
 
 nuclear.path = {
     "atoms"       : nuclear.source + "atoms/",
@@ -24,32 +24,32 @@ nuclear.options = {
     "testcase"   : casper.cli.get("testcase")
 };
 
-// your init file
-require(nuclear.test + "my.js");
+// testing deprecated tags
+require(nuclear.test + "deprecated.js");
 
 casper.echo("Test site: " + nuclear.options.url, "INFO");
 
 // what should be ignore
-if( !(nuclear.options.ignore.indexOf("atoms") >= 0) ){
+if (!(nuclear.options.ignore.indexOf("atoms") >= 0)) {
     require(nuclear.path.atoms + 'a.js');
     require(nuclear.path.atoms + 'form.js');
     require(nuclear.path.atoms + 'img.js');
 }
 
-if( !(nuclear.options.ignore.indexOf("molecules") >= 0) ){
+if (!(nuclear.options.ignore.indexOf("molecules") >= 0)) {
     require(nuclear.path.molecules + 'search.js');
     // your components here
     require(nuclear.path.molecules + "example.js");
 }
 
-if( !(nuclear.options.ignore.indexOf("organisms") >= 0) ){
+if (!(nuclear.options.ignore.indexOf("organisms") >= 0)) {
     require(nuclear.path.organisms + 'header.js');
 }
 
-if( nuclear.options.page ){
+if (nuclear.options.page) {
     require(nuclear.path.pages + nuclear.options.page + ".js");
 }
 
-if( nuclear.options.testcase ){
+if (nuclear.options.testcase) {
     require(nuclear.test + nuclear.options.testcase + ".js");
 }
