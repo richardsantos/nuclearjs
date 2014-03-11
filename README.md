@@ -54,6 +54,7 @@ Options
 * --page
 * --screenshot (default: false)
 * --url (default: http://www.example.com)
+* --network (default: false)
 
 Usage
 -----
@@ -62,6 +63,7 @@ Usage
     $ casperjs test ./init.js --url=http://www.example.com --screenshot=true
     $ casperjs test ./init.js --url=http://www.example.com --ignore=atoms
     $ casperjs test ./init.js --url=http://www.example.com --page=index
+    $ casperjs test ./init.js --url=http://www.example.com --network=true
 
 Contribution
 -------------
