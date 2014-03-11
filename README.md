@@ -2,7 +2,7 @@ NuclearJS - Boilerplate for CasperJS
 ===============================================
 
 NuclearJS is a boilerplate to start your test cases with CasperJS for every project.
-You don't need always code the same things! 
+You don't need always code the same things!
 
 Concept and Organization
 ------------------------
@@ -38,9 +38,9 @@ Dependencies
 Install
 -----------------------------
 If CasperJS is installed, so clone the repo
-    
+
     $ git clone git@github.com:richardsantos/nuclearjs.git
-    
+
     // edit yours paths in the nuclear.json file:
     {
        "root"   : "/var/www/nuclearjs/",
@@ -62,7 +62,7 @@ Usage
     $ casperjs test ./init.js --url=http://www.example.com --screenshot=true
     $ casperjs test ./init.js --url=http://www.example.com --ignore=atoms
     $ casperjs test ./init.js --url=http://www.example.com --page=index
-    
+
 Contribution
 -------------
 Please, submit an issue and send me a pull request.

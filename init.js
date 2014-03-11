@@ -21,13 +21,17 @@ nuclear.options = {
     "page"       : casper.cli.get("page") || null,
     "screenshot" : casper.cli.get("screenshot") || false,
     "url"        : casper.cli.get("url") || "http://www.example.com",
-    "testcase"   : casper.cli.get("testcase")
+    "testcase"   : casper.cli.get("testcase"),
+    "network"    : casper.cli.get("network") || false
 };
 
 // testing deprecated tags
 require(nuclear.test + "deprecated.js");
 
-casper.echo("Test site: " + nuclear.options.url, "INFO");
+// monitoring: resources and javascript errors
+if (nuclear.options.network) {
+    require(nuclear.test + "network.js");
+}
 
 // what should be ignore
 if (!(nuclear.options.ignore.indexOf("atoms") >= 0)) {
@@ -53,3 +57,5 @@ if (nuclear.options.page) {
 if (nuclear.options.testcase) {
     require(nuclear.test + nuclear.options.testcase + ".js");
 }
+
+casper.echo("Test site: " + nuclear.options.url, "INFO");
