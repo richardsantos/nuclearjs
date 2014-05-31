@@ -1,21 +1,13 @@
 /**
 *   <img> element - Test Case
 **/
+var atom = {
+    name: "Image element",
+    selector: "img"
+}
 
-casper.test.begin("Image element", 0, function(test){
+casper.echo("\nAtom: " + atom.name, "INFO");
 
-    casper.start(nuclear.options.url, function() {
-        test.assertDoesntExist("img[src='']", "Empty Image");
-        test.assertDoesntExist("img:not([alt])", "Alternative Text");
-        test.assertDoesntExist("img[alt='']", "Empty Alternative Text");
-    })
-
-    .then(function(){
-    	// your tests here
-    })
-
-    .run(function(){
-        test.done();
-    });
-
-});
+casper.test.assertDoesntExist(atom.selector + "[src='']", "Empty Image");
+casper.test.assertDoesntExist(atom.selector + ":not([alt])", "Alternative Text");
+casper.test.assertDoesntExist(atom.selector + "[alt='']", "Empty Alternative Text");

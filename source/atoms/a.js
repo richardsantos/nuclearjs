@@ -2,23 +2,16 @@
 *   <a> element - Test Case
 **/
 
-casper.test.begin("Anchor element", 0, function(test){
+var atom = {
+    name: "Anchor element",
+    selector: "a"
+}
 
-    casper.start(nuclear.options.url, function() {
-        test.assertDoesntExist("a[href='']", "Empty links");
-        test.assertDoesntExist("a[href*='callto']", "Skype Deprecated Function");
-        test.assertDoesntExist("a[href*='javascript']", "Behavior forbidden here");
-        var host = this.getCurrentUrl().split('/')[2];
-        test.assertDoesntExist("a[href^='http']:not([href*='" + host + "']):not([target='_blank'])", "External Links");
-        test.assertDoesntExist("a[title='']", "Empty Title attribute");
-    })
+casper.echo("\nAtom: " + atom.name, "INFO");
 
-    .then(function(){
-        // your tests here
-    })
-
-    .run(function(){
-        test.done();
-    });
-
-});
+var host = casper.getCurrentUrl().split('/')[2];
+casper.test.assertDoesntExist(atom.selector + "[href='']", "Empty links");
+casper.test.assertDoesntExist(atom.selector + "[href*='callto']", "Skype Deprecated Function");
+casper.test.assertDoesntExist(atom.selector + "[href*='javascript']", "Behavior forbidden here");
+casper.test.assertDoesntExist(atom.selector + "[href^='http']:not([href*='" + host + "']):not([target='_blank'])", "External Links");
+casper.test.assertDoesntExist(atom.selector + "[title='']", "Empty Title attribute");

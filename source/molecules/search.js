@@ -7,28 +7,15 @@ var molecule = {
     selector : "form"
 };
 
-casper.test.begin(molecule.name, 3, function(test){
+casper.echo("\nMolecule: " + molecule.name, "INFO");
 
-    casper.start(nuclear.options.url, function() {
-        if(this.exists(molecule.selector)){
-            test.assertExists(molecule.selector + " input[type='text']", "Search Input");
-            test.assertExists(molecule.selector + " button[type='submit']", "Search button");
-        }else{
-            this.echo(molecule.selector + " not found!", "INFO");
-        }
-    })
+if(casper.exists(molecule.selector)){
+    casper.test.assertExists(molecule.selector + " input[type='text']", "Search Input");
+    casper.test.assertExists(molecule.selector + " button[type='submit']", "Search button");
 
-    .then(function(){
-        // screenshot
-        if( this.exists(molecule.selector) && nuclear.options.screenshot === true ){
-            this.captureSelector(nuclear.path.screenshots + molecule.name + ".jpg", molecule.selector);
-        }
-        
-        // your tests here
-    })
-
-    .run(function(){
-        test.done();
-    });
-
-});
+    if(nuclear.options.screenshot === true) {
+        casper.captureSelector(nuclear.path.screenshots + molecule.name + ".jpg", molecule.selector);
+    }
+}else{
+    casper.echo(molecule.selector + " not found!", "INFO");
+}
