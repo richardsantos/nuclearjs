@@ -7,29 +7,17 @@ var molecule = {
     selector : "body > div"
 };
 
-casper.test.begin(molecule.name, 3, function(test){
+casper.echo("\nMolecule: " + molecule.name, "INFO");
 
-    casper.start(nuclear.options.url, function() {
-        if(this.exists(molecule.selector)){
-            test.assertExists(molecule.selector + " h1", "Example Heading");
-            test.assertExists(molecule.selector + " p", "Example text");
-            test.assertExists(molecule.selector + " a[href='http://www.iana.org/domains/example']", "Example Link");
-        }else{
-            this.echo(molecule.selector + " not found!", "INFO");
-        }
-    })
+if(casper.exists(molecule.selector)){
+    casper.test.assertExists(molecule.selector + " h1", "Example Heading");
+    casper.test.assertExists(molecule.selector + " p", "Example text");
+    casper.test.assertExists(molecule.selector + " a[href='http://www.iana.org/domains/example']", "Example Link");
 
-    .then(function(){
-        // screenshot
-        if( this.exists(molecule.selector) && nuclear.options.screenshot === true ){
-            this.captureSelector(nuclear.path.screenshots + molecule.name + ".jpg", molecule.selector);
-        }
-        
-        // your tests here
-    })
+    if (nuclear.options.screenshot === true) {
+        casper.captureSelector(nuclear.path.screenshots + molecule.name + ".jpg", molecule.selector);
+    }
 
-    .run(function(){
-        test.done();
-    });
-
-});
+}else{
+    casper.echo(molecule.selector + " not found!", "INFO");
+}

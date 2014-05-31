@@ -1,27 +1,18 @@
 /**
 *   Tests for deprecated tags
 **/
+var test = {
+    name: "Deprecated tags"
+}
 
-casper.test.begin("Deprecated", 0, function (test) {
+casper.echo("\nTest: " + test.name, "INFO");
 
-    casper.start(nuclear.options.url, function () {
-        test.assertDoesntExist("acronym", "The acronym element is deprecated");
-        test.assertDoesntExist("applet", "The applet element is deprecated");
-        test.assertDoesntExist("basefont", "The basefont element is deprecated");
-        test.assertDoesntExist("big", "The big element is deprecated");
-        test.assertDoesntExist("center", "The center element is deprecated");
-        test.assertDoesntExist("dir", "The dir element is deprecated");
-        test.assertDoesntExist("font", "The font element is deprecated");
-        test.assertDoesntExist("isindex", "The isindex element is deprecated");
-        test.assertDoesntExist("strike", "The strike element is deprecated");
-    }).then(function () {
-
-        // your tests here
-
-    }).run(function () {
-
-        test.done();
-
-    });
-
-});
+casper.test.assertDoesntExist("acronym", "The acronym element is deprecated");
+casper.test.assertDoesntExist("applet", "The applet element is deprecated");
+casper.test.assertDoesntExist("basefont", "The basefont element is deprecated");
+casper.test.assertDoesntExist("big", "The big element is deprecated");
+casper.test.assertDoesntExist("center", "The center element is deprecated");
+casper.test.assertDoesntExist("dir", "The dir element is deprecated");
+casper.test.assertDoesntExist("font", "The font element is deprecated");
+casper.test.assertDoesntExist("isindex", "The isindex element is deprecated");
+casper.test.assertDoesntExist("strike", "The strike element is deprecated");

@@ -1,0 +1,1 @@
+casper.echo("Reusing me", "WARNING");
