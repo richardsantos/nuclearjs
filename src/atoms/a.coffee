@@ -6,7 +6,7 @@ atom =
     name: "Anchor element"
     selector: "a"
 
-casper.echo "\nAtom: " + atom.name, "INFO"
+casper.echo "Atom: #{atom.name}", "INFO"
 
 host = casper.getCurrentUrl().split('/')[2]
 casper.test.assertDoesntExist "#{atom.selector}[href='']", "Empty links"

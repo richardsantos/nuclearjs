@@ -4,9 +4,8 @@
    @author Richard Santos (https://github.com/richardsantos/nuclearjs)
 ###
 
-# var casper  = require('casper').create();
-
 nuclear = require "nuclear.json"
+EXT = ".coffee"
 
 nuclear.path =
     "atoms"       : nuclear.source + "atoms/"
@@ -23,40 +22,50 @@ nuclear.options =
     "testcase"   : casper.cli.get("testcase")
     "network"    : casper.cli.get("network") || false
 
+
+casper.echo nuclear.options.page, "INFO"
+
 casper.test.begin nuclear.options.url, (test) ->
+
     casper.start(nuclear.options.url, 0, ->
         # testing deprecated tags
-        require nuclear.test + "deprecated.coffee"
+        # require nuclear.test + "deprecated#{EXT}"
         # monitoring: resources and javascript errors
-        require nuclear.test + "network.coffee"
+        require nuclear.test + "network#{EXT}"
     ).then(->
+        casper.echo "Vai dar certo!"
         # atoms
         unless nuclear.options.ignore.indexOf("atoms") >= 0
-            require nuclear.path.atoms + 'a.coffee'
-            require nuclear.path.atoms + 'form.coffee'
-            require nuclear.path.atoms + 'img.coffee'
+            #require nuclear.path.atoms + "a#{EXT}"
+            require nuclear.path.atoms + "abbr#{EXT}"
+            #require nuclear.path.atoms + "img#{EXT}"
+            #require nuclear.path.atoms + "label#{EXT}"
+            #require nuclear.path.atoms + "select#{EXT}"
+            #require nuclear.path.atoms + "textarea#{EXT}"
+            #require nuclear.path.atoms + "title#{EXT}"
         return
     ).then(->
         # molecules
         unless nuclear.options.ignore.indexOf("molecules") >= 0
-            require nuclear.path.organisms + "search.coffee"
+            require nuclear.path.molecules + "search#{EXT}"
+            require nuclear.path.molecules + "example#{EXT}"
             # your components here
-            require nuclear.path.organisms + "example.coffee"
         return
     ).then(->
+        casper.echo "PELO MENOS TO AQUI, TA LIGADO","ERROR"
         # organisms
         unless nuclear.options.ignore.indexOf("organisms") >= 0
-            require nuclear.path.organisms + "header.coffee"
+            require nuclear.path.organisms + "header#{EXT}"
         return
     ).then(->
-        # molecules
-        unless nuclear.options.page
-            require nuclear.path.pages + nuclear.options.page + ".coffee"
+        # pages
+        if nuclear.options.page
+            require nuclear.path.pages + nuclear.options.page + EXT
         return
     ).then(->
         # test cases
         unless nuclear.options.testcase
-            require nuclear.test + nuclear.options.testcase + ".js"
+            require nuclear.test + nuclear.options.testcase + EXT
         return
     ).run ->
         test.done()

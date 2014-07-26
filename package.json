@@ -1,0 +1,36 @@
+{
+  "name": "nuclearjs",
+  "version": "0.0.1",
+  "description": "UI (and regression) tests boilerplate for CasperJS",
+  "main": "init.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/richardsantos/nuclearjs.git"
+  },
+  "keywords": [
+    "css",
+    "testing",
+    "visual",
+    "regression",
+    "phantomjs",
+    "casperjs",
+    "UI",
+    "testing"
+  ],
+  "author": "Richard Santos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/richardsantos/nuclearjs/issues"
+  },
+  "homepage": "https://github.com/richardsantos/nuclearjs",
+  "devDependencies": {
+    "phantomcss": "~0.7.2",
+    "casperjs": "~1.1.0-beta3"
+  }
+}

@@ -32,8 +32,8 @@ Example of folder structure:
 Dependencies
 ------------
 
-* [NodeJS](http://nodejs.org/)
-* [CasperJS](http://casperjs.org) based in [PhantomJS](http://phantomjs.org)
+* [CasperJS](http://casperjs.org)
+* [PhantomCSS](http://github.com/huddle/PhantomCSS)
 
 Install
 -----------------------------
