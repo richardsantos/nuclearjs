@@ -1,0 +1,35 @@
+{
+  "name": "nuclearjs",
+  "version": "0.0.1",
+  "description": "Boilerplate for CasperJS",
+  "main": "init.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "casperjs test ./init.js",
+    "selftest": "casperjs selftest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/richardsantos/nuclearjs.git"
+  },
+  "keywords": [
+    "testing",
+    "automating",
+    "test",
+    "javascript",
+    "phantomjs",
+    "casperjs"
+  ],
+  "author": "Richard Santos <richaardsantos@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/richardsantos/nuclearjs/issues"
+  },
+  "homepage": "https://github.com/richardsantos/nuclearjs",
+  "dependencies": {
+    "casperjs": "^1.1.3",
+    "phantomjs-prebuilt": "^2.1.14"
+  }
+}

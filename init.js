@@ -8,12 +8,13 @@
 
 var nuclear = require("nuclear.json");
 
+
 nuclear.path = {
     "atoms"       : nuclear.source + "atoms/",
     "molecules"   : nuclear.source + "molecules/",
     "organisms"   : nuclear.source + "organisms/",
     "pages"       : nuclear.source + "pages/",
-    "screenshots" : nuclear.test + "screenshots/"
+    "screenshots" : nuclear.root + "screenshots/"
 };
 
 nuclear.options = {

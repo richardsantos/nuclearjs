@@ -29,24 +29,21 @@ Example of folder structure:
     init.js (case test initializer)
     nuclear.json (your paths)
 
-Dependencies
+Install
 ------------
 
-* [NodeJS](http://nodejs.org/)
-* [CasperJS](http://casperjs.org) based in [PhantomJS](http://phantomjs.org)
+* `npm intall -g phantomjs-prebuilt`
+* `npm install`
 
-Install
------------------------------
-If CasperJS is installed, so clone the repo
-
-    $ git clone git@github.com:richardsantos/nuclearjs.git
-
-    // edit yours paths in the nuclear.json file:
-    {
-       "root"   : "/var/www/nuclearjs/",
-       "source" : "/var/www/nuclearjs/source/",
-       "test"   : "/var/www/nuclearjs/tests/"
-    }
+Usage
+-----
+```sh
+    $ npm test --
+    $ npm test -- --url=http://www.example.com --screenshot=true
+    $ npm test -- --url=http://www.example.com --ignore=atoms
+    $ npm test -- --url=http://www.example.com --page=index
+    $ npm test -- --url=http://www.example.com --network=true
+```
 
 Options
 -------
@@ -56,18 +53,9 @@ Options
 * --url (default: http://www.example.com)
 * --network (default: false)
 
-Usage
------
-
-    $ casperjs test ./init.js
-    $ casperjs test ./init.js --url=http://www.example.com --screenshot=true
-    $ casperjs test ./init.js --url=http://www.example.com --ignore=atoms
-    $ casperjs test ./init.js --url=http://www.example.com --page=index
-    $ casperjs test ./init.js --url=http://www.example.com --network=true
-
 Contribution
 -------------
-Please, submit an issue and send me a pull request.
+Please, submit an issue or send me a pull request.
 
 Thanks
 ------

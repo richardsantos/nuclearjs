@@ -1,6 +1,6 @@
 {
-    "root": "/var/www/nuclearjs/",
-    "source": "/var/www/nuclearjs/source/",
-    "test": "/var/www/nuclearjs/tests/",
-    "vendors": "/var/www/nuclearjs/vendors/"
+    "root": "./",
+    "source": "./source/",
+    "test": "./tests/",
+    "vendors": "./vendors/"
 }
